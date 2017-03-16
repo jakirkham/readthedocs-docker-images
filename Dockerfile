@@ -46,4 +46,7 @@ RUN curl -O https://repo.continuum.io/miniconda/Miniconda2-4.3.11-Linux-x86_64.s
 RUN bash Miniconda2-4.3.11-Linux-x86_64.sh -b -p /home/docs/miniconda2/
 env PATH $PATH:/home/docs/miniconda2/bin
 
+# Add conda-forge channel with the highest channel priority
+RUN conda config --add channels conda-forge
+
 CMD ["/bin/bash"]
